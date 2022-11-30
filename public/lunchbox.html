@@ -1,69 +1,80 @@
-
 <!DOCTYPE html>
 <html>
-  <header class="main-header">
-    <!-- Start Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-default bootsnav">
+    <header class="main-header">
+        <!-- Start Navigation -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-default bootsnav">
+            <div class="container">
+                <!-- Start Header Navigation -->
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="index.html"><img src="images/logo.png" class="logo" alt="" /></a>
+                </div>
+                <!-- End Header Navigation -->
+
+                <!-- Start Atribute Navigation -->
+
+                <div class="attr-nav">
+                    <ul>
+                        <input class="search_input" placeholder="Search" />
+                    </ul>
+                </div>
+                <!-- End Atribute Navigation -->
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="navbar-menu">
+                    <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
+                        <li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="dropdown">
+                            <a href="" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">SHOP</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="/shop">師大市集</a></li>
+                                <li><a href="/shop">師大租借</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="profile.html">Profile</a></li>
+                        <li class="nav-item"><a id="signed" class="nav-link" href="login.html">Sign In</a></li>
+                        <div id="hello" style="display: none">
+                            <p id="UserName"></p>
+                        </div>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+        </nav>
+        <!-- End Navigation -->
+    </header>
+
+    <div class="all-title-box">
         <div class="container">
-            <!-- Start Header Navigation -->
-            <div class="navbar-header">
-                <a class="navbar-brand" href="index.html"><img src="images/logo.png" class="logo" alt=""></a>
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2>帳戶資料</h2>
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item active"><a href="rent_upload.html">我有東西要出租</a></li>
+                    </ul>
+                    <ul class="breadcrumb" style="margin-right: 10px">
+                        <li class="breadcrumb-item active"><a href="comment.html">我要評價</a></li>
+                    </ul>
+                </div>
             </div>
-            <!-- End Header Navigation -->
-
-            <!-- Start Atribute Navigation -->
-
-            <div class="attr-nav">
-                <ul>
-                    <input class="search_input" placeholder="Search">
-                </ul>
-            </div>
-            <!-- End Atribute Navigation -->
-
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="navbar-menu">
-                <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
-                    <li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="dropdown">
-                        <a href="" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">SHOP</a>
-                        <ul class="dropdown-menu">
-                            <li><a href="/shop">師大市集</a></li>
-                            <li><a href="/shop">師大租借</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="profile.html">Profile</a></li>
-                    <li class="nav-item"><a id="signed" class="nav-link" href="login.html">Sign In</a></li>
-                    <div id='hello' style="display: none;">
-                        <p id="UserName"></p>
-                    </div>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
         </div>
-    </nav>
-    <!-- End Navigation -->
-</header>
+    </div>
 
+    <div class="home">
+        <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
+        <div class="block">
+            <div class="all-title-box">
+                <a> 需攝取營養</a>
+            </div>
+        </div>
+        <div class="block">
+            <div class="flip">
+                <a> 推薦餐盒</a>
+            </div>
+            <div class="panel">今日餐盒(一)</div>
+            <div class="panel">今日餐盒(二)</div>
+        </div>
 
-<div class="all-title-box">
-  <div class="container">
-      <div class="row">
-          <div class="col-lg-12">
-              <h2>帳戶資料</h2>
-              <ul class="breadcrumb">
-                  <li class="breadcrumb-item active"><a href="rent_upload.html">我有東西要出租</a></li>
-              </ul>
-              <ul class="breadcrumb" style="margin-right: 10px;">
-                  <li class="breadcrumb-item active"><a href="comment.html">我要評價</a></li>
-              </ul>
-          </div>
-      </div>
-  </div>
-</div>
-
-
-
-
+<<<<<<< HEAD
   <div class="home">
     <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
     <div class = "block">  
@@ -85,36 +96,50 @@
           <a> 主餐</a>
       </div>
     
+=======
+        <div class="block">
+            <div class="all-title-box">
+                <a> 主餐</a>
+            </div>
+        </div>
+        <div class="block">
+            <div class="all-title-box">
+                <a> 目前訂購</a>
+            </div>
+        </div>
+>>>>>>> yuhantsao9999/main
     </div>
-    <div class = "block">
-      <div class="all-title-box">
 
-        <a> 目前訂購</a>
-      </div>
-    </div>
-  </div>
-  
-  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
-  <script type="text/javascript" src="js/login.js"></script>
-  <script type="text/javascript" src="js/lunchbox.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
+    <script type="text/javascript" src="js/login.js"></script>
+    <script type="text/javascript" src="js/lunchbox.js"></script>
+    <script type="text/javascript" src="js/checkLocalStorage.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    <link
+        rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous"
+    />
 </html>
 <script>
-
-
-
-  $(function(){
-    $(".flip").click(function(){
-        $(".panel").slideToggle("slow");
-        $(".xs1").toggle();
-        $(".xs2").toggle();
-      });});
-
+    $(function () {
+        $('.flip').click(function () {
+            $('.panel').slideToggle('slow');
+            $('.xs1').toggle();
+            $('.xs2').toggle();
+        });
+    });
+    window.addEventListener('load', () => {
+        if (!checkLocalStorage()) {
+            window.alert('Please log in first.');
+            window.location = 'index.html';
+        }
+    });
 </script>
 
-
 <style>
+<<<<<<< HEAD
   .all-title-box {
       background-size: cover;
       text-align: center;
@@ -140,5 +165,35 @@
   }
   .panel{margin:0px;padding:5px;text-align:center;background:#e5eecc;border:solid 1px #c3c3c3;display:none;font-family:'Arial';}
   
+=======
+    .all-title-box {
+        background-size: cover;
+        text-align: center;
+        background-attachment: fixed;
+        padding: 30px 0px;
+        position: relative;
+        background-color: lightblue;
+    }
+    .block {
+        margin-bottom: 6rem;
+    }
+
+    .flip {
+        background-size: cover;
+        text-align: center;
+        background-attachment: fixed;
+        padding: 30px 0px;
+        position: relative;
+        background-color: lightblue;
+    }
+    .panel {
+        margin: 0px;
+        padding: 5px;
+        text-align: center;
+        background: #e5eecc;
+        border: solid 1px #c3c3c3;
+        display: none;
+        font-family: 'Arial';
+    }
+>>>>>>> yuhantsao9999/main
 </style>
-  

@@ -15,12 +15,12 @@ window.addEventListener('load', () => {
         .then((data) => {
             console.log('JS data: ', data);
             for (let i = 0; i < data.photo.length && i < 4; i++) {
-                fillInProduct('rank'+i, data.product_id[i], data.photo[i], data.name[i], data.price[i]);
+                fillInProduct('rank' + i, data.product_id[i], i, data.name[i], data.price[i]);
             }
         })
         .catch((err) => {
             console.log(err);
-        })
+        });
 
     fetch(`./index_shop?order=new`, {
         method: 'GET',
@@ -38,27 +38,27 @@ window.addEventListener('load', () => {
         .then((data) => {
             console.log('JS data: ', data);
             for (let i = 0; i < data.photo.length && i < 4; i++) {
-                fillInProduct('new'+i, data.product_id[i], data.photo[i], data.name[i], data.price[i]);
+                fillInProduct('new' + i, data.product_id[i], i + 2, data.name[i], data.price[i]);
             }
         })
         .catch((err) => {
             console.log(err);
-        })
-})
+        });
+});
 
-const fillInProduct = (id, product_id, photo, name, price) =>{
-    const img = document.getElementById(id+'img');
-    img.setAttribute('src', `https://ntnurent.s3.amazonaws.com/${photo.split(',')[0]}`);
-    const href = document.getElementById(id+'href');
+const fillInProduct = (id, product_id, photo, name, price) => {
+    const img = document.getElementById(id + 'img');
+    img.setAttribute('src', `./images/lunchbox-0${photo + 1}.png`);
+    const href = document.getElementById(id + 'href');
     href.setAttribute('href', '/product?product_id=' + product_id);
-    const text = document.getElementById(id+'text');
+    const text = document.getElementById(id + 'text');
     const name_h4 = document.createElement('h4');
     name_h4.textContent = name;
     text.appendChild(name_h4);
     const price_h5 = document.createElement('h5');
     price_h5.textContent = price;
     text.appendChild(price_h5);
-}
+};
 
 const fillIn = () => {
     fetch(`./index_shop`, {
@@ -82,18 +82,17 @@ const fillIn = () => {
         })
         .catch((err) => {
             console.log(err);
-        })
-}
+        });
+};
 
 const addProduct = (body, filter, id, photo, name, price) => {
-
     const div = document.getElementById(body);
 
     const filter_class = document.createElement('div');
-    filter_class.setAttribute('class', 'col-lg-3 col-md-6 special-grid ' + filter)
+    filter_class.setAttribute('class', 'col-lg-3 col-md-6 special-grid ' + filter);
 
     const fix = document.createElement('div');
-    fix.setAttribute('class', 'products-single fix')
+    fix.setAttribute('class', 'products-single fix');
     const box_img = document.createElement('div');
     box_img.setAttribute('class', 'box-img-hover');
     const lb_class = document.createElement('div');
@@ -157,4 +156,4 @@ const addProduct = (body, filter, id, photo, name, price) => {
     filter_class.appendChild(fix);
 
     div.appendChild(filter_class);
-}
+};
