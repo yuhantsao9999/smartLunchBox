@@ -59,6 +59,21 @@
                             <label> Set A Password<span class="req">*</span> </label>
                             <input v-model="signUp['password']" id="password" type="password" maxlength="30" required autocomplete="off" />
                         </div>
+
+                        <div class="field-wrap">
+                            <label> 身高<span class="req">*</span> </label>
+                            <input v-model="signUp['tall']" id="tall" type="tall" maxlength="30" required autocomplete="off" />
+                        </div>
+
+                        <div class="field-wrap">
+                            <label> 體重<span class="req">*</span> </label>
+                            <input v-model="signUp['weight']" id="weight" type="weight" maxlength="30" required autocomplete="off" />
+                        </div>
+
+                        <div class="field-wrap">
+                            <label> 年齡<span class="req">*</span> </label>
+                            <input v-model="signUp['age']" id="age" type="age" maxlength="30" required autocomplete="off" />
+                        </div>
     
                         <button @click="SignUp($event)" type="submit" class="button button-block">Sign up</button>
                     </div>
@@ -74,7 +89,7 @@
                             <label> Password<span class="req">*</span> </label>
                             <input v-model="login['password']" id="password2_signIn" name="password" type="password" required autocomplete="off" />
                         </div>
-    
+                        
                         <button @click="Login($event)" class="button button-block">Log In</button>
                     </div>
                 </div>
