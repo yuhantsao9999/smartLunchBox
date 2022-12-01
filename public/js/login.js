@@ -1,7 +1,7 @@
 let loginSignup = new Vue({
     el : '#login-signup',
     data : {
-        signUp : {email:'', password:'', name:'', phone:'', errmsg:''},
+        signUp : {email:'', password:'', name:'', phone:'', age:'' , tall:'', weight:'',errmsg:''},
         login : {name:'', email:'', password:'', errmsg:''}
     },
     methods : {
@@ -11,7 +11,11 @@ let loginSignup = new Vue({
                     name:this.signUp.name,
                     email:this.signUp.email,
                     password:this.signUp.password,
-                    phone:this.signUp.phone
+                    phone:this.signUp.phone,
+                    height:this.signUp.tall,
+                    weight: this.signUp.weight,
+                    age: this.signUp.age
+
                 };
                 const response = await fetch('./signUp', {
                     method: 'POST',
