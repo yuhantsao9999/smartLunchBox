@@ -59,11 +59,37 @@
         </div>
     </div>
 
-    <div class="home">
+    <div class="home" style="margin: 100px">
         <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
         <div class="block">
             <div class="all-title-box">
                 <a> 需攝取營養</a>
+            </div>
+        </div>
+        <div>
+            <div class="wrap">
+                <div class="left">
+                    <form class="item-box">
+                        <div>蛋白質</div>
+                        <input type="checkbox" class="largerCheckbox" value="" name="pork" />豬肉<br />
+                        <input type="checkbox" class="largerCheckbox" value="" name="chicken" />雞肉<br />
+                        <input type="checkbox" class="largerCheckbox" value="" name="beef" />牛肉<br />
+                    </form>
+                </div>
+
+                <div class="middle">
+                    <div>蔬菜</div>
+                    <input type="checkbox" class="largerCheckbox" value="" name="" />蘑菇<br />
+                    <input type="checkbox" class="largerCheckbox" value="" name="" />甜椒<br />
+                    <input type="checkbox" class="largerCheckbox" value="" name="" />高麗菜<br />
+                </form>
+                </div>
+                <div class="right">
+                    <div>全榖雜糧</div>
+                    <input type="checkbox" class="largerCheckbox" value="" name="" />白飯<br />
+                    <input type="checkbox" class="largerCheckbox" value="" name="" />藜麥<br />
+                    <input type="checkbox" class="largerCheckbox" value="" name="" />紫米<br />
+                </div>
             </div>
         </div>
         <div class="block">
@@ -125,7 +151,7 @@
         background-color: lightblue;
     }
     .block {
-        margin-bottom: 6rem;
+        margin-bottom: 2rem;
     }
 
     .flip {
@@ -145,5 +171,37 @@
         border: solid 1px #c3c3c3;
         display: none;
         font-family: 'Arial';
+    }
+    .wrap {
+        /*父元素*/
+        width: 100%;
+        height: 200px;
+        display: flex;
+        justify-content: space-between;
+    }
+    .left {
+        /* background: red; */
+        width: 33%;
+        height: auto;
+        text-align: center;
+        font-size: 30px;
+    }
+    .middle {
+        /* background: red; */
+        width: 33%;
+        height: auto;
+        text-align: center;
+        font-size: 30px;
+    }
+    .right {
+        /* background: blue; */
+        width: 33%;
+        height: auto;
+        text-align: center;
+        font-size: 30px;
+    }
+    input.largerCheckbox {
+        width: 20px;
+        height: 20px;
     }
 </style>
