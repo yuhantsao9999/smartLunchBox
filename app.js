@@ -22,8 +22,9 @@ app.use('/', upload);
 const shop = require('./routes/shop');
 app.use('/', shop);
 
-const product = require('./routes/product');
-app.use('/', product);
+const lunchbox = require('./routes/health');
+app.use('/', lunchbox);
+
 
 app.get('/', (req, res) => {
     res.send('Very ok');
