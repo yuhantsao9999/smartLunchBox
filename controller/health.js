@@ -18,7 +18,7 @@ const Health = async (userid) => {
             data.totalcal = result.totalcal;
             data.sportcal = result.sportcal;
             data.sleep = result.sleep;
-            data.period = 0 ? FALSE : TRUE;
+            data.period = result.period;
         }
         return { error: false, data };
     }
