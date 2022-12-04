@@ -40,10 +40,10 @@ const addTr = (date, step, cal, weight, height, waistline, bodyfat) => {
     td.appendChild(document.createTextNode(date));
     tr.appendChild(td);
     td = document.createElement('td');
-    td.appendChild(document.createTextNode(step));
+    td.appendChild(document.createTextNode(cal));
     tr.appendChild(td);
     td = document.createElement('td');
-    td.appendChild(document.createTextNode(cal));
+    td.appendChild(document.createTextNode(step));
     tr.appendChild(td);
     tr.appendChild(td);
     tbody.appendChild(tr);

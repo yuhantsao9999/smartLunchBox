@@ -16,6 +16,7 @@ const Health = async(email) => {
             data.height = result.height;
             data.weight = result.weight;
             data.step = result.step;
+            data.sportcal = result.sportcal;
         }
         return { error: false, data };
     }
