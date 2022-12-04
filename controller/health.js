@@ -11,11 +11,15 @@ const Health = async(email) => {
     if (results.length > 0){
         for (let result of results){
             data.date = result.date;
+            data.bodyfat = result.bodyfat;
+            data.waistline = result.waistline;
+            data.height = result.height;
+            data.weight = result.weight;
             data.step = result.step;
         }
-        return { error: false, data}
+        return { error: false, data };
     }
-    return {error: true }
-}
+    return { error: true };
+};
 
 module.exports = Health;
