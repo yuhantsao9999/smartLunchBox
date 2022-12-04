@@ -22,6 +22,10 @@ const signUp = async (account) => {
 		account['authority'] = 0;
 		const sql = 'INSERT INTO Users SET ?';
 		await mysql.query(sql, account);
+		console.log(account);
+		const email=account.email;
+		const sql2 = 'INSERT INTO Health (email) VALUES (?)';
+		await mysql.query(sql2, email);
 	}
 	catch (err) {
 		throw err;

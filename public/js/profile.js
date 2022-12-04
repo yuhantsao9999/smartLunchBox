@@ -6,13 +6,8 @@
 //       });});
 
 const showhealth = () => {
-    // const data = {
-    //     //email: localStorage.getItem('email'),
-    //     userId: '1234'
-    // }
-    console.log("enter fondend")
-    const userId='1234';
-    fetch(`/health?userid=${userId}`, {
+    const email=localStorage.getItem('email');
+    fetch(`/health?email=${email}`, {
         method: 'get',
         headers: {
             'content-type': 'application/json',

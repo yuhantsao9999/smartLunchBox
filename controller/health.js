@@ -1,9 +1,9 @@
 const mysql = require('../model/db');
 
 
-const Health = async(userid) => {
-    const sql = 'SELECT * FROM health WHERE userid = ?'
-    const results = await mysql.query(sql, [userid])
+const Health = async(email) => {
+    const sql = 'SELECT * FROM health WHERE email = ?'
+    const results = await mysql.query(sql, [email])
         .catch((err) => {
             console.log(err)
         })
@@ -12,7 +12,6 @@ const Health = async(userid) => {
         for (let result of results){
             data.date = result.date;
             data.step = result.step;
-            data.cal = result.cal;
         }
         return { error: false, data}
     }
