@@ -6,13 +6,8 @@
 //       });});
 
 const getHealth = () => {
-    // const data = {
-    //     //email: localStorage.getItem('email'),
-    //     userId: '1234'
-    // }
-    console.log('enter fondend2');
-    const email=localStorage.getItem('email');
-    console.log(email)
+    const email = localStorage.getItem('email');
+    console.log(email);
     fetch(`/health?email=${email}`, {
         method: 'get',
         headers: {
@@ -29,12 +24,44 @@ const getHealth = () => {
         })
         .then((data) => {
             console.log(data);
-            // window.alert('成功！');
-            // window.location = '/shop';
-            return data;
+            return fetchLunchbox(data);
         })
         .catch((err) => {
             console.log('err', err);
         });
 };
 
+const fetchLunchbox = async (userdata) => {
+    const { height, weight, sportcal, step, sleep } = userdata;
+    const data = {
+        gender: userdata.gender === 'male' ? 1 : 2,
+        weight,
+        height,
+        // age: int (age)
+        sportcal,
+        step,
+        sleep,
+        period: userdata.period === 0 ? false : true,
+    };
+    try {
+        return fetch('http://123.193.50.31:1234/yummy', {
+            method: 'POST',
+            body: JSON.stringify(data),
+            headers: {
+                'content-type': 'application/json',
+            },
+        })
+            .then((response) => {
+                return response.json();
+            })
+            .then((response) => {
+                console.log('response', response);
+                return response;
+            })
+            .catch((error) => {
+                console.error(`Error:lunchbox data not found`);
+            });
+    } catch (error) {
+        return;
+    }
+};
