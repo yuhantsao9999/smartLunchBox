@@ -5,7 +5,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>租借平台</title>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link
+            rel="stylesheet"
+            href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+            integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+            crossorigin="anonymous"
+        />
         <link rel="stylesheet" href="./css/login.css" />
         <style>
             #admin-area {
@@ -14,8 +19,9 @@
                 margin-top: 10px;
                 border: rgb(243, 87, 119) 2px solid;
                 border-radius: 5px;
-                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-                color: rgb(134, 124, 124)
+                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva,
+                    Verdana, sans-serif;
+                color: rgb(134, 124, 124);
             }
         </style>
     </head>
@@ -23,58 +29,107 @@
     <body>
         <div id="login-signup">
             <div class="d-flex justify-content-center">
-                <p id="admin-area" class="pl-3 text-left">
+                <!-- <p id="admin-area" class="pl-3 text-left">
                     管理者後台 email : root@gmail.com<br>
                     管理者後台 密碼 : root<br>
                     請小心使用~
-                </p>
+                </p> -->
             </div>
             <div class="form">
                 <ul class="tab-group">
                     <li class="tab active"><a href="#signup">Sign Up</a></li>
                     <li class="tab"><a href="#login">LogIn</a></li>
                 </ul>
-    
+
                 <div class="tab-content">
                     <div id="signup">
                         <h3 id="error_signUp">{{signUp['errmsg']}}</h3>
                         <div class="top-row">
                             <div class="field-wrap">
                                 <label> Name<span class="req">*</span> </label>
-                                <input v-model="signUp['name']" id="first_name" type="text" maxlength="20" required autocomplete="off" />
+                                <input
+                                    v-model="signUp['name']"
+                                    id="first_name"
+                                    type="text"
+                                    maxlength="20"
+                                    required
+                                    autocomplete="off"
+                                />
                             </div>
-    
+
                             <div class="field-wrap">
                                 <label> Phone<span class="req">*</span> </label>
-                                <input v-model="signUp['phone']" id="last_name" type="text" maxlength="10" required autocomplete="off" />
+                                <input
+                                    v-model="signUp['phone']"
+                                    id="last_name"
+                                    type="text"
+                                    maxlength="10"
+                                    required
+                                    autocomplete="off"
+                                />
                             </div>
                         </div>
-    
+
                         <div class="field-wrap">
                             <label> Email Address<span class="req">*</span> </label>
-                            <input v-model="signUp['email']" id="email_signUp" type="email" maxlength="50" required autocomplete="off" />
+                            <input
+                                v-model="signUp['email']"
+                                id="email_signUp"
+                                type="email"
+                                maxlength="50"
+                                required
+                                autocomplete="off"
+                            />
                         </div>
-    
+
                         <div class="field-wrap">
                             <label> Set A Password<span class="req">*</span> </label>
-                            <input v-model="signUp['password']" id="password" type="password" maxlength="30" required autocomplete="off" />
+                            <input
+                                v-model="signUp['password']"
+                                id="password"
+                                type="password"
+                                maxlength="30"
+                                required
+                                autocomplete="off"
+                            />
                         </div>
 
                         <div class="field-wrap">
                             <label> 身高<span class="req">*</span> </label>
-                            <input v-model="signUp['tall']" id="tall" type="tall" maxlength="30" required autocomplete="off" />
+                            <input
+                                v-model="signUp['tall']"
+                                id="tall"
+                                type="tall"
+                                maxlength="30"
+                                required
+                                autocomplete="off"
+                            />
                         </div>
 
                         <div class="field-wrap">
                             <label> 體重<span class="req">*</span> </label>
-                            <input v-model="signUp['weight']" id="weight" type="weight" maxlength="30" required autocomplete="off" />
+                            <input
+                                v-model="signUp['weight']"
+                                id="weight"
+                                type="weight"
+                                maxlength="30"
+                                required
+                                autocomplete="off"
+                            />
                         </div>
 
                         <div class="field-wrap">
                             <label> 年齡<span class="req">*</span> </label>
-                            <input v-model="signUp['age']" id="age" type="age" maxlength="30" required autocomplete="off" />
+                            <input
+                                v-model="signUp['age']"
+                                id="age"
+                                type="age"
+                                maxlength="30"
+                                required
+                                autocomplete="off"
+                            />
                         </div>
-    
+
                         <button @click="SignUp($event)" type="submit" class="button button-block">Sign up</button>
                     </div>
                     <div id="login">
@@ -82,14 +137,28 @@
                         <h3 v-else id="error_signIn">{{login['errmsg']}}</h3>
                         <div class="field-wrap">
                             <label> Email Address<span class="req">*</span> </label>
-                            <input v-model="login['email']" id="email_signIn" name="email" type="email" required autocomplete="off" />
+                            <input
+                                v-model="login['email']"
+                                id="email_signIn"
+                                name="email"
+                                type="email"
+                                required
+                                autocomplete="off"
+                            />
                         </div>
-    
+
                         <div class="field-wrap">
                             <label> Password<span class="req">*</span> </label>
-                            <input v-model="login['password']" id="password2_signIn" name="password" type="password" required autocomplete="off" />
+                            <input
+                                v-model="login['password']"
+                                id="password2_signIn"
+                                name="password"
+                                type="password"
+                                required
+                                autocomplete="off"
+                            />
                         </div>
-                        
+
                         <button @click="Login($event)" class="button button-block">Log In</button>
                     </div>
                 </div>
