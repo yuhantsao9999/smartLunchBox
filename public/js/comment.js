@@ -1,8 +1,6 @@
 const urlParams = new URLSearchParams(window.location.search);
 
-urlParams.get('title') === 'user'
-    ? (document.getElementById('title').innerHTML = '與我租東西的租借者')
-    : (document.getElementById('title').innerHTML = '租借到的東西');
+document.getElementById('title').innerHTML = '訂購的餐盒';
 
 window.addEventListener('load', () => {
     if (!checkLocalStorage()) {
@@ -10,13 +8,7 @@ window.addEventListener('load', () => {
         window.location = 'index.html';
     }
     const email = localStorage.getItem('email');
-    //  fetch 租借的東西:fetch 租回來的東西
-    const fetchUrl =
-        urlParams.get('title') === 'user'
-            ? `./rent_finish_image?email=${email}`
-            : `./rent_finish_back_image?email=${email}`;
-
-    fetch(fetchUrl, {
+    fetch(`./finishLunchbox?email=${email}`, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
@@ -24,14 +16,16 @@ window.addEventListener('load', () => {
     })
         .then(async (response) => {
             if (!response.ok) {
-                var noclass_done_Content = document.createTextNode('尚未有需要評論的物品哦!');
+                var noclass_done_Content = document.createTextNode('尚未有需要評論的餐盒哦!');
                 document.getElementById('profile_add_info').appendChild(noclass_done_Content);
                 throw await response.text();
             }
             return response.json();
         })
         .then((data) => {
+            console.log('yuhan data', data);
             var count = data.length;
+            console.log('test name', data[0].name);
             for (var i = 0; i < count; i++) {
                 //替換課程
                 var starDiv = document.createElement('div');
@@ -78,7 +72,7 @@ window.addEventListener('load', () => {
                 titleInput.id = 'product_name';
 
                 titleInput.value = data[i].name;
-                var titleContent = document.createTextNode(data[i].title);
+                var titleContent = document.createTextNode(data[i].name);
                 var classDiv_a = document.createElement('a');
                 classDiv_a.href = '#';
                 classDiv_a.appendChild(titleContent);
@@ -91,7 +85,7 @@ window.addEventListener('load', () => {
                 comment_textarea.type = 'text';
                 comment_textarea.id = 'comment_textarea';
 
-                var subtitleContent = document.createTextNode(data[i].subtitle);
+                var subtitleContent = document.createTextNode(data[i].date.split('T')[0]);
                 var subtitleClassDiv = document.createElement('div');
                 // subtitleClassDiv_a.href = '#';
                 subtitleClassDiv.appendChild(subtitleContent);
@@ -127,7 +121,7 @@ window.addEventListener('load', () => {
 
                 var classImg = document.createElement('img');
                 var classImg_a = document.createElement('a');
-                classImg.src = 'https://ntnurent.s3.amazonaws.com/' + data[i].paths;
+                classImg.src = 'images/lunchbox-01.png';
                 classImg_a.href = '#';
 
                 var classDiv = document.createElement('div');
@@ -138,7 +132,7 @@ window.addEventListener('load', () => {
                 imgDiv_a.href = '#';
 
                 var imgDiv_img = document.createElement('img');
-                imgDiv_img.src = 'https://ntnurent.s3.amazonaws.com/' + data[i].paths;
+                imgDiv_img.src = 'images/lunchbox-01.png';
 
                 imgDiv_a.appendChild(imgDiv_img);
 
