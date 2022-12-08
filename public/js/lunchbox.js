@@ -43,14 +43,17 @@ const fetchLunchbox = async (userdata) => {
         sleep,
         period: userdata.period === 0 ? false : true,
     };
+    const formData = new FormData();
+    formData.append('data', JSON.stringify(data));
     try {
         console.log('fetch =', data);
         return fetch('http://123.193.50.31:1234/yummy', {
+            mode: 'cors',
             method: 'POST',
-            body: JSON.stringify(data),
-            headers: {
-                'content-type': 'application/json',
-            },
+            body: formData,
+            // headers: {
+            //     'content-type': 'application/json',
+            // },
         })
             .then((response) => {
                 return response.json();
