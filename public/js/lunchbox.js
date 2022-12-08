@@ -10,9 +10,10 @@ const showhealth = () => {
     //     //email: localStorage.getItem('email'),
     //     userId: '1234'
     // }
-    console.log('enter fondend');
-    const userId = '1234';
-    fetch(`/health?userid=${userId}`, {
+    console.log('enter fondend2');
+    const email=localStorage.getItem('email');
+    console.log(email)
+    fetch(`/health?email=${email}`, {
         method: 'get',
         headers: {
             'content-type': 'application/json',
@@ -30,7 +31,7 @@ const showhealth = () => {
             console.log(data);
             // window.alert('成功！');
             // window.location = '/shop';
-            return data.cal;
+            return data;
         })
         .catch((err) => {
             console.log('err', err);
