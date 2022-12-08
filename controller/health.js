@@ -1,15 +1,13 @@
 const mysql = require('../model/db');
 
-
-const Health = async(email) => {
-    const sql = 'SELECT * FROM health WHERE email = ?'
-    const results = await mysql.query(sql, [email])
-        .catch((err) => {
-            console.log(err)
-        })
-    const data = {}
-    if (results.length > 0){
-        for (let result of results){
+const Health = async (email) => {
+    const sql = 'SELECT * FROM health WHERE email = ?';
+    const results = await mysql.query(sql, [email]).catch((err) => {
+        console.log(err);
+    });
+    let data = {};
+    if (results.length > 0) {
+        for (let result of results) {
             // data.date = result.date;
             // data.bodyfat = result.bodyfat;
             // data.waistline = result.waistline;
