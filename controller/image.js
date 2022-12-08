@@ -26,8 +26,8 @@ const getUserWaitRent = async (email) => {
 };
 
 const getUserRent = async (email) => {
-    const sql =
-        "SELECT C.contract_id, Product.photo, Product.p_name, Product.brand, Product.price, C.start_date, C.end_date, Product.days, R.name FROM Contract AS C JOIN Users AS P ON C.publish_id = P.user_id JOIN Users AS R ON C.rent_id = R.user_id JOIN Product ON C.product_id = Product.product_id WHERE C.c_status = 'continue' AND P.email = ?";
+    const sql = 'select * from Contract where email= ?';
+    // "SELECT C.contract_id, Product.photo, Product.p_name, Product.brand, Product.price, C.start_date, C.end_date, Product.days, R.name FROM Contract AS C JOIN Users AS P ON C.publish_id = P.user_id JOIN Users AS R ON C.rent_id = R.user_id JOIN Product ON C.product_id = Product.product_id WHERE C.c_status = 'continue' AND P.email = ?";
     const results = await mysql.query(sql, email).catch((err) => {
         console.log(err);
     });
@@ -36,14 +36,14 @@ const getUserRent = async (email) => {
     if (results.length > 0) {
         for (let result of results) {
             data.push({
-                whoRent: result.name,
-                contract_id: result.contract_id,
-                paths: result.photo,
-                name: result.p_name,
-                brand: result.brand,
-                price: result.price,
-                end_date: result.end_date,
-                long: result.days,
+                // whoRent: result.name,
+                // contract_id: result.contract_id,
+                // paths: result.photo,
+                name: result.content,
+                // brand: result.brand,
+                // price: result.price,
+                date: result.date,
+                // long: result.days,
             });
         }
         return { error: false, data };

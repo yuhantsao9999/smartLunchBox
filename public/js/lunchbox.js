@@ -23,7 +23,7 @@ const getHealth = () => {
             return response.json();
         })
         .then((data) => {
-            console.log('data =',data);
+            console.log('data =', data);
             return fetchLunchbox(data);
         })
         .catch((err) => {
@@ -32,7 +32,7 @@ const getHealth = () => {
 };
 
 const fetchLunchbox = async (userdata) => {
-    const { height, weight, sportcal, step, sleep ,age } = userdata;
+    const { height, weight, sportcal, step, sleep, age } = userdata;
     const data = {
         gender: userdata.gender === 'male' ? 1 : 2,
         weight,
@@ -44,7 +44,7 @@ const fetchLunchbox = async (userdata) => {
         period: userdata.period === 0 ? false : true,
     };
     try {
-        console.log('fetch =',data)
+        console.log('fetch =', data);
         return fetch('http://123.193.50.31:1234/yummy', {
             method: 'POST',
             body: JSON.stringify(data),
