@@ -6,7 +6,7 @@ router.get('/health', async (req, res) => {
     const email = req.query.email;
 
     const result = await health(email);
-    console.log('backend result', result);
+    // console.log('backend result', result);
     if (result.error) {
         res.status(404).send('health get error.');
     }
