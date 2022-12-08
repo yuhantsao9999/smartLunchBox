@@ -66,3 +66,8 @@ const fetchLunchbox = async (userdata) => {
         return;
     }
 };
+
+const submit = () => {
+    window.alert('訂購完成！');
+    window.location = 'profile.html';
+};
