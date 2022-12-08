@@ -24,9 +24,9 @@ const signUp = async (account) => {
         const email = account.email;
         const height = account.height;
         const weight = account.weight;
-
-        const sql2 = 'INSERT INTO Health(email,height,weight) VALUES(?,?,?)';
-        await mysql.query(sql2, [email, height, weight]);
+        const age = account.age;
+        const sql2 = 'INSERT INTO Health(email,height,weight,age) VALUES(?,?,?,?)';
+        await mysql.query(sql2, [email, height, weight,age]);
 
         const sql3 = `UPDATE Health SET gender = 'male', date = '12/4',bodyfat='28',waistline='20',height='168',weight='55',step='6187',totalcal='1500',sportcal='400',sleep='7',period='0'
 WHERE email =?`;
