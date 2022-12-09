@@ -115,7 +115,6 @@
                                     </ul>
                                     
                                 </div>
-                                <!-- <input type="range" class="largebar" min="1" max="20" value="10"> -->
                             </div>
                             <div class="middle">
                                 <a> 
@@ -129,7 +128,6 @@
                                         </ul>
                                 </div>
                             </div>
-                                <!-- <input type="range" class="largebar" min="1" max="20" value="5"> -->
                             <div class="right">
                                 <a> 
                                     脂質(大卡)<br/>
@@ -142,37 +140,20 @@
                                     </ul>
                                 </div>
                             </div>
-                                <!-- <input type="range" class="largebar" min="1" max="20" value="15"> -->
-                        </div>
-                        
-                    </div>
-                        <div class="wrap">
-                            <div class="left">
-                                <a> </a>
-                                <div class="text">
-                                    <a> </a>
-                                </div>
-                            </div>
-                            <div class="middle">
+                            <div class="under">
                                 <a> 
                                     熱量(大卡)<br/>
                                 </a>
-                                <div class="text">
-                                    2120kcal
-                                </div>
-                                
-                            </div>
-                            <div class="right">
-                                <a> 
-                                     
-                                </a>
-                                <div class="text">
-                                    <a>
-                                         
-                                    </a>
+                                <div class="text">  
+                                    <ul>
+                                        <li v-modle.number="suggest_weight">
+                                            {{sum}}
+                                        </li>
+                                    </ul>
                                 </div>
                             </div>
-                        </div> 
+                        </div>      
+                    </div>
                 </div>
             </div>
         </div> 
@@ -181,7 +162,7 @@
                 <a> 推薦餐盒</a>
             </div>
             <div>
-                <div class="wrap">
+                <div class="wrap2">
                     <div class="left">
                         <div class="products-single fix">
                             <div class="box-img-hover">
@@ -345,7 +326,7 @@
         el: "#app01",
         data: 
         {
-            'suggest_weight': [485.625,194.25, 291.375], 
+            'suggest_weight': [485.625,194.25, 291.375],
             'box1': [{'name': ['護眼餐盒'], 
             'rice': ['白米飯', 200, 0.78, 0.069, 0.006], 
             'main_meal': ['清蒸鮭魚', 150, 0, 0.207, 0.095], 
@@ -365,13 +346,18 @@
             'veg2': ['涼拌茄子', 80, 0.052, 0.013, 0.019], 
             'veg3': ['節瓜蝦米粉絲', 80, 0.1297, 0.0291, 0.0263]}]
         },
+        computed:{
+            sum(){
+                return this.suggest_weight[0] + this.suggest_weight[1] + this.suggest_weight[2];
+            }
+        }
     });
     // click color change
-    $(".panel").click(
-        function(){
-            $(this).addClass("panelbuy");
-        }
-    );
+    // $(".panel").click(
+    //     function(){
+    //         $(this).addClass("panelbuy");
+    //     }
+    // );
     $(function () {
         $('.flip').click(function () {
             $('.panel').slideToggle('slow');
@@ -426,26 +412,41 @@
         /*父元素*/
         width: 100%;
         height: auto;
+        /* 刪掉才能垂直排列 */
+        /* display: flex; */
+        justify-content: space-between;
+    }
+    .wrap2 {
+        /*父元素*/
+        width: 100%;
+        height: auto;
         display: flex;
         justify-content: space-between;
     }
     .left {
-        /* background: red; */
         width: 33%;
         height: auto;
         text-align: center;
         font-size: 30px;
+        /* 垂直排列用 */
+        float: left;
     }
     .middle {
-        /* background: red; */
         width: 33%;
         height: auto;
         text-align: center;
         font-size: 30px;
+        float: left;
     }
     .right {
-        /* background: blue; */
         width: 33%;
+        height: auto;
+        text-align: center;
+        font-size: 30px;
+        float: left;
+    }
+    .under {
+        width: 100%;
         height: auto;
         text-align: center;
         font-size: 30px;
@@ -470,11 +471,11 @@
         opacity: 0.5; 
         color:white;
     } */
-    .panelbuy {
+    /* .panelbuy {
         border:solid 2px black;
         background-color: #000000; 
         opacity: 0.5; 
         color:white;
-    }
+    } */
 
 </style>
