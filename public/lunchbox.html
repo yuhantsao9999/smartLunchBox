@@ -102,44 +102,80 @@
             <div>
                 <div class="bar">
                     <div>
-                        <div class="wrap">
+                        <div class="wrap" id = "app01">
                             <div class="left">
                                 <a> 
-                                    醣類(克)
+                                    醣類(大卡)
                                 </a>
                                 <div class="text">
-                                    <a>
-                                        100g
-                                    </a>
+                                    <ul>
+                                        <li v-once="suggest_weight">
+                                            {{suggest_weight[0]}}
+                                        </li>
+                                    </ul>
+                                    
                                 </div>
                                 <!-- <input type="range" class="largebar" min="1" max="20" value="10"> -->
                             </div>
                             <div class="middle">
                                 <a> 
-                                    蛋白質(克)<br/>
+                                    蛋白質(大卡)<br/>
                                 </a>
                                 <div class="text">
-                                    <a>
-                                        120g
+                                        <ul>
+                                            <li v-once="suggest_weight">
+                                                {{suggest_weight[1]}}
+                                            </li>
+                                        </ul>
                                 </div>
+                            </div>
                                 <!-- <input type="range" class="largebar" min="1" max="20" value="5"> -->
+                            <div class="right">
+                                <a> 
+                                    脂質(大卡)<br/>
+                                </a>
+                                <div class="text">  
+                                    <ul>
+                                        <li v-once="suggest_weight">
+                                            {{suggest_weight[2]}}
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                                <!-- <input type="range" class="largebar" min="1" max="20" value="15"> -->
+                        </div>
+                        
+                    </div>
+                        <div class="wrap">
+                            <div class="left">
+                                <a> </a>
+                                <div class="text">
+                                    <a> </a>
+                                </div>
+                            </div>
+                            <div class="middle">
+                                <a> 
+                                    熱量(大卡)<br/>
+                                </a>
+                                <div class="text">
+                                    2120kcal
+                                </div>
+                                
                             </div>
                             <div class="right">
                                 <a> 
-                                    脂質(克)<br/>
+                                     
                                 </a>
                                 <div class="text">
                                     <a>
-                                        110g
+                                         
                                     </a>
                                 </div>
-                                <!-- <input type="range" class="largebar" min="1" max="20" value="15"> -->
                             </div>
-                        </div>
-                    </div>
+                        </div> 
                 </div>
             </div>
-        </div>
+        </div> 
         <div class="block">
             <div class="flip">
                 <a> 推薦餐盒</a>
@@ -147,31 +183,56 @@
             <div>
                 <div class="wrap">
                     <div class="left">
-                        <div class="panel">今日餐盒(一)
-                            <div>
-                                雞肉<br/>
-                                白飯<br/>
-                                甜椒<br/>
-                                雞肉<br/>
-                                白飯
+                        <div class="products-single fix">
+                            <div class="box-img-hover">
+                                <div class="panel">今日餐盒(一)
+                                    <div>
+                                        雞肉<br/>
+                                        白飯<br/>
+                                        甜椒<br/>
+                                        雞肉<br/>
+                                        白飯
+                                    </div>
+                                </div>
+                                <div class="mask-icon">
+                                    <a class="cart" href="#">Add to Cart</a>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="middle">
-                        <div class="panel">今日餐盒(二)
-                            <div>
-                                豬肉<br/>
-                                藜麥<br/>
-                                蘑菇<br/>
+                        <div class="products-single fix">
+                            <div class="box-img-hover">
+                                <div class="panel">今日餐盒(二)
+                                    <div>
+                                        豬肉<br/>
+                                        藜麥<br/>
+                                        蘑菇<br/>
+                                        藜麥<br/>
+                                        蘑菇
+                                    </div>
+                                </div>
+                                <div class="mask-icon">
+                                    <a class="cart" href="#">Add to Cart</a>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="right">
-                        <div class="panel">今日餐盒(三)
-                            <div>
-                                牛肉<br/>
-                                紫米<br/>
-                                高麗菜<br/>
+                        <div class="products-single fix">
+                            <div class="box-img-hover">
+                                <div class="panel">今日餐盒(三)
+                                    <div>
+                                        牛肉<br/>
+                                        紫米<br/>
+                                        高麗菜<br/>
+                                        紫米<br/>
+                                        高麗菜
+                                    </div>
+                                </div>
+                                <div class="mask-icon">
+                                    <a class="cart" href="#">Add to Cart</a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -218,13 +279,14 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> 
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
     <!-- <script type="text/javascript" src="js/login.js"></script> -->
     <script type="text/javascript" src="js/lunchbox.js"></script>
-    <script type="text/javascript" src="js/checkLocalStorage.js"></script>
+    <!-- 跳出登入視窗 -->
+    <!-- <script type="text/javascript" src="js/checkLocalStorage.js"></script> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
     <link
         rel="stylesheet"
@@ -264,6 +326,7 @@
                     </div>
                 </div>
             </div>
+        </div>
     </footer>
     <!-- End Footer  -->
 
@@ -278,6 +341,37 @@
 </html>
 
 <script>
+    new Vue({
+        el: "#app01",
+        data: 
+        {
+            'suggest_weight': [485.625,194.25, 291.375], 
+            'box1': [{'name': ['護眼餐盒'], 
+            'rice': ['白米飯', 200, 0.78, 0.069, 0.006], 
+            'main_meal': ['清蒸鮭魚', 150, 0, 0.207, 0.095], 
+            'veg1': ['涼拌茄子', 80, 0.052, 0.013, 0.019], 
+            'veg2': ['紅蘿蔔炒蛋', 80, 0.06, 0.08, 0.05], 
+            'veg3': ['鹹蛋苦瓜', 80, 0.05, 0.0406, 0.04]}], 
+            'box2': [{'name': ['健身餐盒'], 
+            'rice': ['藜麥飯', 200, 0.642, 0.141, 0.0061], 
+            'main_meal': ['烤煎雞胸肉', 150, 0.0051, 0.3344, 0.3344], 
+            'veg1': ['紅蘿蔔炒蛋', 80, 0.06, 0.08, 0.05], 
+            'veg2': ['滷豬血', 80, 0.009, 0.091, 0.009], 
+            'veg3': ['枸杞', 80, 0.66, 0.109, 0.003]}], 
+            'box3': [{'name': ['一般餐盒'], 
+            'rice': ['紫米飯', 200, 0.751, 0.083, 0.017], 
+            'main_meal': ['牛腱片', 150, 0, 0.225, 0.05], 
+            'veg1': ['涼拌茄子', 80, 0.052, 0.013, 0.019], 
+            'veg2': ['涼拌茄子', 80, 0.052, 0.013, 0.019], 
+            'veg3': ['節瓜蝦米粉絲', 80, 0.1297, 0.0291, 0.0263]}]
+        },
+    });
+    // click color change
+    $(".panel").click(
+        function(){
+            $(this).addClass("panelbuy");
+        }
+    );
     $(function () {
         $('.flip').click(function () {
             $('.panel').slideToggle('slow');
@@ -322,7 +416,8 @@
         margin: 0px;
         padding: 5px;
         text-align: center;
-        background: #e5eecc;
+        /* background: #e5eecc; */
+        background: lightgoldenrodyellow;
         border: solid 1px #c3c3c3;
         display: none;
         font-family: 'Arial';
@@ -370,4 +465,16 @@
     .text {
         font-weight: bold;
     }
+    /* .panel:active{
+        background-color: #000000; 
+        opacity: 0.5; 
+        color:white;
+    } */
+    .panelbuy {
+        border:solid 2px black;
+        background-color: #000000; 
+        opacity: 0.5; 
+        color:white;
+    }
+
 </style>
