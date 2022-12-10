@@ -162,17 +162,42 @@
                 <a> 推薦餐盒</a>
             </div>
             <div>
-                <div class="wrap2">
+                <div class="wrap2" id="app02">
                     <div class="left">
                         <div class="products-single fix">
                             <div class="box-img-hover">
-                                <div class="panel">今日餐盒(一)
+                                <div class="panel">
                                     <div>
-                                        雞肉<br/>
-                                        白飯<br/>
-                                        甜椒<br/>
-                                        雞肉<br/>
-                                        白飯
+                                        <ul>
+                                            <li v-for="item in box1">
+                                                {{item.name[0]}}
+                                            </li>
+                                            <hr size="8px" align="center" width="100%">
+                                            <li v-for="item in box1">
+                                                {{item.rice[0]}}
+                                            </li>
+                                            <li v-for="item in box1">
+                                                {{item.main_meal[0]}}
+                                            </li>
+                                            <li v-for="item in box1">
+                                                {{item.veg1[0]}}
+                                            </li>
+                                            <li v-for="item in box1">
+                                                {{item.veg2[0]}}
+                                            </li>
+                                            <li v-for="item in box1">
+                                                {{item.veg3[0]}}
+                                            </li>
+
+                                            <!-- <p>{{box1}}</p> -->
+                                        </ul>
+                                        <div class="text">  
+                                            <ul>
+                                                <li v-modle.number="box1">
+                                                    {{sumbox1}}大卡
+                                                </li>
+                                            </ul>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="mask-icon">
@@ -184,13 +209,36 @@
                     <div class="middle">
                         <div class="products-single fix">
                             <div class="box-img-hover">
-                                <div class="panel">今日餐盒(二)
+                                <div class="panel">
                                     <div>
-                                        豬肉<br/>
-                                        藜麥<br/>
-                                        蘑菇<br/>
-                                        藜麥<br/>
-                                        蘑菇
+                                        <ul>
+                                            <li v-for="item in box2">
+                                                {{item.name[0]}}
+                                            </li>
+                                            <hr size="8px" align="center" width="100%">
+                                            <li v-for="item in box2">
+                                                {{item.rice[0]}}
+                                            </li>
+                                            <li v-for="item in box2">
+                                                {{item.main_meal[0]}}
+                                            </li>
+                                            <li v-for="item in box2">
+                                                {{item.veg1[0]}}
+                                            </li>
+                                            <li v-for="item in box2">
+                                                {{item.veg2[0]}}
+                                            </li>
+                                            <li v-for="item in box2">
+                                                {{item.veg3[0]}}
+                                            </li>
+                                        </ul>
+                                        <div class="text">  
+                                            <ul>
+                                                <li v-modle.number="box2">
+                                                    {{sumbox2}}大卡
+                                                </li>
+                                            </ul>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="mask-icon">
@@ -202,13 +250,36 @@
                     <div class="right">
                         <div class="products-single fix">
                             <div class="box-img-hover">
-                                <div class="panel">今日餐盒(三)
+                                <div class="panel">
                                     <div>
-                                        牛肉<br/>
-                                        紫米<br/>
-                                        高麗菜<br/>
-                                        紫米<br/>
-                                        高麗菜
+                                        <ul>
+                                            <li v-for="item in box3">
+                                                {{item.name[0]}}
+                                            </li>
+                                            <hr size="8px" align="center" width="100%">
+                                            <li v-for="item in box3">
+                                                {{item.rice[0]}}
+                                            </li>
+                                            <li v-for="item in box3">
+                                                {{item.main_meal[0]}}
+                                            </li>
+                                            <li v-for="item in box3">
+                                                {{item.veg1[0]}}
+                                            </li>
+                                            <li v-for="item in box3">
+                                                {{item.veg2[0]}}
+                                            </li>
+                                            <li v-for="item in box3">
+                                                {{item.veg3[0]}}
+                                            </li>
+                                        </ul>
+                                        <div class="text">  
+                                            <ul>
+                                                <li v-modle.number="box3">
+                                                    {{sumbox3}}大卡
+                                                </li>
+                                            </ul>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="mask-icon">
@@ -326,7 +397,7 @@
         el: "#app01",
         data: 
         {
-            'suggest_weight': [485.625,194.25, 291.375],
+            'suggest_weight': [485.625, 194.25, 291.375],
             'box1': [{'name': ['護眼餐盒'], 
             'rice': ['白米飯', 200, 0.78, 0.069, 0.006], 
             'main_meal': ['清蒸鮭魚', 150, 0, 0.207, 0.095], 
@@ -349,6 +420,57 @@
         computed:{
             sum(){
                 return this.suggest_weight[0] + this.suggest_weight[1] + this.suggest_weight[2];
+            }
+        }
+    });
+    new Vue({
+        el: "#app02",
+        data: 
+        {
+            'suggest_weight': [485.625, 194.25, 291.375],
+            'box1': [{'name': ['護眼餐盒'], 
+            'rice': ['白米飯', 200, 0.78, 0.069, 0.006], 
+            'main_meal': ['清蒸鮭魚', 150, 0, 0.207, 0.095], 
+            'veg1': ['涼拌茄子', 80, 0.052, 0.013, 0.019], 
+            'veg2': ['紅蘿蔔炒蛋', 80, 0.06, 0.08, 0.05], 
+            'veg3': ['鹹蛋苦瓜', 80, 0.05, 0.0406, 0.04]}], 
+            'box2': [{'name': ['健身餐盒'], 
+            'rice': ['藜麥飯', 200, 0.642, 0.141, 0.0061], 
+            'main_meal': ['烤煎雞胸肉', 150, 0.0051, 0.3344, 0.3344], 
+            'veg1': ['紅蘿蔔炒蛋', 80, 0.06, 0.08, 0.05], 
+            'veg2': ['滷豬血', 80, 0.009, 0.091, 0.009], 
+            'veg3': ['枸杞', 80, 0.66, 0.109, 0.003]}], 
+            'box3': [{'name': ['一般餐盒'], 
+            'rice': ['紫米飯', 200, 0.751, 0.083, 0.017], 
+            'main_meal': ['牛腱片', 150, 0, 0.225, 0.05], 
+            'veg1': ['涼拌茄子', 80, 0.052, 0.013, 0.019], 
+            'veg2': ['涼拌茄子', 80, 0.052, 0.013, 0.019], 
+            'veg3': ['節瓜蝦米粉絲', 80, 0.1297, 0.0291, 0.0263]}]
+        },
+        computed:{
+            sumbox1(){
+                rice =  this.box1[0].rice[1] + this.box1[0].rice[2] + this.box1[0].rice[3]+ this.box1[0].rice[4];
+                main_meal = this.box1[0].main_meal[1] + this.box1[0].main_meal[2] + this.box1[0].main_meal[3] + this.box1[0].main_meal[4];
+                veg1 = this.box1[0].veg1[1] + this.box1[0].veg1[2] + this.box1[0].veg1[3] + this.box1[0].veg1[4];
+                veg2 = this.box1[0].veg2[1] + this.box1[0].veg2[2] + this.box1[0].veg2[3] + this.box1[0].veg2[4];
+                veg3 = this.box1[0].veg3[1] + this.box1[0].veg3[2] + this.box1[0].veg3[3] + this.box1[0].veg3[4];
+                return rice+main_meal+veg1+veg2+veg3;
+            },
+            sumbox2(){
+                rice =  this.box2[0].rice[1] + this.box2[0].rice[2] + this.box2[0].rice[3]+ this.box2[0].rice[4];
+                main_meal = this.box2[0].main_meal[1] + this.box2[0].main_meal[2] + this.box2[0].main_meal[3] + this.box2[0].main_meal[4];
+                veg1 = this.box2[0].veg1[1] + this.box2[0].veg1[2] + this.box2[0].veg1[3] + this.box2[0].veg1[4];
+                veg2 = this.box2[0].veg2[1] + this.box2[0].veg2[2] + this.box2[0].veg2[3] + this.box2[0].veg2[4];
+                veg3 = this.box2[0].veg3[1] + this.box2[0].veg3[2] + this.box2[0].veg3[3] + this.box2[0].veg3[4];
+                return rice+main_meal+veg1+veg2+veg3;
+            },
+            sumbox3(){
+                rice =  this.box3[0].rice[1] + this.box3[0].rice[2] + this.box3[0].rice[3]+ this.box3[0].rice[4];
+                main_meal = this.box3[0].main_meal[1] + this.box3[0].main_meal[2] + this.box3[0].main_meal[3] + this.box3[0].main_meal[4];
+                veg1 = this.box3[0].veg1[1] + this.box3[0].veg1[2] + this.box3[0].veg1[3] + this.box3[0].veg1[4];
+                veg2 = this.box3[0].veg2[1] + this.box3[0].veg2[2] + this.box3[0].veg2[3] + this.box3[0].veg2[4];
+                veg3 = this.box3[0].veg3[1] + this.box3[0].veg3[2] + this.box3[0].veg3[3] + this.box3[0].veg3[4];
+                return rice+main_meal+veg1+veg2+veg3;
             }
         }
     });
