@@ -394,7 +394,7 @@
 
 <script>
     
-    let box_option;
+    let box_option =0 ;
     // click color change
     // $(".panel").click(
     //     function(){
@@ -461,6 +461,29 @@
         }
     });
    console.log('result =',result);
+
+
+    const submit = () => {
+        window.alert(box_option);
+        if(box_option ==1){
+            console.log(JSON.parse(lunchboxData).box1)
+            localStorage.removeItem('cart');
+            localStorage.setItem('cart', JSON.stringify(JSON.parse(lunchboxData).box1));
+        }
+        else if(box_option ==2){
+            console.log(JSON.parse(lunchboxData).box2)
+            localStorage.removeItem('cart');
+            localStorage.setItem('cart', JSON.stringify(JSON.parse(lunchboxData).box2));
+        }
+        else if(box_option ==3){
+            console.log(JSON.parse(lunchboxData).box3)
+            localStorage.removeItem('cart');
+            localStorage.setItem('cart', JSON.stringify(JSON.parse(lunchboxData).box3));
+        }
+        
+        
+    };
+
 </script>
 
 <style>

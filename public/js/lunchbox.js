@@ -45,7 +45,7 @@ const fetchLunchbox = async (userdata) => {
     };
     try {
         console.log('fetch =', data);
-        return fetch('http://123.193.50.31:1234/yummy', {
+        return fetch('http://172.20.0.102:1234/yummy', {
             method: 'POST',
             body: JSON.stringify(data),
             headers: {
@@ -69,9 +69,3 @@ const fetchLunchbox = async (userdata) => {
     }
 };
 
-const submit = () => {
-    window.alert('訂購完成！');
-    window.location = 'profile.html';
-    data = JSON.parse(lunchboxData.box[box_option]);
-    console.log(data);
-};
