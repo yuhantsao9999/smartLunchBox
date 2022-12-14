@@ -201,7 +201,7 @@
                                     </div>
                                 </div>
                                 <div class="mask-icon">
-                                    <a class="cart" href="#">Add to Cart</a>
+                                    <a class="cart" href="#" @click = "box_option =1">Add to Cart</a>
                                 </div>
                             </div>
                         </div>
@@ -242,7 +242,7 @@
                                     </div>
                                 </div>
                                 <div class="mask-icon">
-                                    <a class="cart" href="#">Add to Cart</a>
+                                    <a class="cart" href="#" @click = "box_option =2">Add to Cart</a>
                                 </div>
                             </div>
                         </div>
@@ -283,7 +283,7 @@
                                     </div>
                                 </div>
                                 <div class="mask-icon">
-                                    <a class="cart" href="#">Add to Cart</a>
+                                    <a class="cart" href="#" @click = "box_option =3">Add to Cart</a>
                                 </div>
                             </div>
                         </div>
@@ -394,7 +394,7 @@
 
 <script>
     
-    
+    let box_option =0 ;
     // click color change
     // $(".panel").click(
     //     function(){
@@ -426,7 +426,7 @@
             sumbox1(){
                 rice =  this.box1[0].rice[1]*( 4*this.box1[0].rice[2] + 4*this.box1[0].rice[3]+ 9*this.box1[0].rice[4]);
                 main_meal = this.box1[0].main_meal[1]*( 4*this.box1[0].main_meal[2] + 4*this.box1[0].main_meal[3] + 9*this.box1[0].main_meal[4]);
-                veg1 = this.box1[0].veg1[1]* (4* this.box1[0].veg1[2] + 4*this.box1[0].veg1[3] + 9*this.box1[0].veg1[4]);
+                veg1 = this.box1[0].veg1[1]* ( 4* this.box1[0].veg1[2] + 4*this.box1[0].veg1[3] + 9*this.box1[0].veg1[4]);
                 veg2 = this.box1[0].veg2[1]*( 4*this.box1[0].veg2[2] + 4*this.box1[0].veg2[3] + 9*this.box1[0].veg2[4]);
                 veg3 = this.box1[0].veg3[1]*( 4*this.box1[0].veg3[2] + 4*this.box1[0].veg3[3] + 9*this.box1[0].veg3[4]);
                 return rice+main_meal+veg1+veg2+veg3;
@@ -434,17 +434,17 @@
             sumbox2(){
                 rice =  this.box2[0].rice[1]*( 4*this.box2[0].rice[2] + 4*this.box2[0].rice[3]+ 9*this.box2[0].rice[4]);
                 main_meal = this.box2[0].main_meal[1] *( 4*this.box2[0].main_meal[2] + 4*this.box2[0].main_meal[3] + 9*this.box2[0].main_meal[4]);
-                veg1 = this.box2[0].veg1[1] * (4*this.box2[0].veg1[2] + 4*this.box2[0].veg1[3] + 9*this.box2[0].veg1[4]);
-                veg2 = this.box2[0].veg2[1] *(4*this.box2[0].veg2[2] + 4*this.box2[0].veg2[3] + 9*this.box2[0].veg2[4]);
-                veg3 = this.box2[0].veg3[1] *(4*this.box2[0].veg3[2] + 4*this.box2[0].veg3[3] +9*this.box2[0].veg3[4]);
+                veg1 = this.box2[0].veg1[1] * ( 4*this.box2[0].veg1[2] + 4*this.box2[0].veg1[3] + 9*this.box2[0].veg1[4]);
+                veg2 = this.box2[0].veg2[1] *( 4*this.box2[0].veg2[2] + 4*this.box2[0].veg2[3] + 9*this.box2[0].veg2[4]);
+                veg3 = this.box2[0].veg3[1] *( 4*this.box2[0].veg3[2] + 4*this.box2[0].veg3[3] + 9*this.box2[0].veg3[4]);
                 return rice+main_meal+veg1+veg2+veg3;
             },
             sumbox3(){
-                rice =  this.box3[0].rice[1] *(4*this.box3[0].rice[2] + 4*this.box3[0].rice[3]+ 9*this.box3[0].rice[4]);
+                rice =  this.box3[0].rice[1] *( 4*this.box3[0].rice[2] + 4*this.box3[0].rice[3]+ 9*this.box3[0].rice[4]);
                 main_meal = this.box3[0].main_meal[1] *( 4*this.box3[0].main_meal[2] + 4*this.box3[0].main_meal[3] + 9*this.box3[0].main_meal[4]);
-                veg1 = this.box3[0].veg1[1] * (4*this.box3[0].veg1[2] + 4*this.box3[0].veg1[3] + 9*this.box3[0].veg1[4]);
-                veg2 = this.box3[0].veg2[1] * (4*this.box3[0].veg2[2] + 4*this.box3[0].veg2[3] + 9*this.box3[0].veg2[4]);
-                veg3 = this.box3[0].veg3[1] * (4*this.box3[0].veg3[2] + 4*this.box3[0].veg3[3] + 9*this.box3[0].veg3[4]);
+                veg1 = this.box3[0].veg1[1] * ( 4*this.box3[0].veg1[2] + 4*this.box3[0].veg1[3] + 9*this.box3[0].veg1[4]);
+                veg2 = this.box3[0].veg2[1] * ( 4*this.box3[0].veg2[2] + 4*this.box3[0].veg2[3] + 9*this.box3[0].veg2[4]);
+                veg3 = this.box3[0].veg3[1] * ( 4*this.box3[0].veg3[2] + 4*this.box3[0].veg3[3] + 9*this.box3[0].veg3[4]);
                 return rice+main_meal+veg1+veg2+veg3;
             }
         }
@@ -461,6 +461,29 @@
         }
     });
    console.log('result =',result);
+
+
+    const submit = () => {
+        window.alert(box_option);
+        if(box_option ==1){
+            console.log(JSON.parse(lunchboxData).box1)
+            localStorage.removeItem('cart');
+            localStorage.setItem('cart', JSON.stringify(JSON.parse(lunchboxData).box1));
+        }
+        else if(box_option ==2){
+            console.log(JSON.parse(lunchboxData).box2)
+            localStorage.removeItem('cart');
+            localStorage.setItem('cart', JSON.stringify(JSON.parse(lunchboxData).box2));
+        }
+        else if(box_option ==3){
+            console.log(JSON.parse(lunchboxData).box3)
+            localStorage.removeItem('cart');
+            localStorage.setItem('cart', JSON.stringify(JSON.parse(lunchboxData).box3));
+        }
+        
+        
+    };
+
 </script>
 
 <style>
