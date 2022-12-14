@@ -28,7 +28,7 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="./css/custom.css">
 
-    <!-- <script type="text/javascript" src="js/index.js"></script> -->
+    <script type="text/javascript" src="js/index.js"></script>
 </head>
 
 <body>
@@ -59,8 +59,8 @@
                         <li class="dropdown">
                             <a href="" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">SHOP</a>
                             <ul class="dropdown-menu">
-                                <li><a href="/shop">訂購餐盒</a></li>
-                                <li><a href="/shop">外送餐盒</a></li>
+                                <li><a href="/smartLunchBox/public/lunchbox.html">訂購餐盒</a></li>
+                                <li><a href="/smartLunchBox/public/lunchbox.html">外送餐盒</a></li>
                             </ul>
                         </li>
                         <li class="nav-item"><a class="nav-link" href="profile.html">Profile</a></li>
@@ -201,7 +201,7 @@
                                     </div>
                                 </div>
                                 <div class="mask-icon">
-                                    <a class="cart" href="#">Add to Cart</a>
+                                    <a class="cart" href="#" @click = "box_option = 1">Add to Cart</a>
                                 </div>
                             </div>
                         </div>
@@ -242,7 +242,7 @@
                                     </div>
                                 </div>
                                 <div class="mask-icon">
-                                    <a class="cart" href="#">Add to Cart</a>
+                                    <a class="cart" href="#" @click = "box_option = 2">Add to Cart</a>
                                 </div>
                             </div>
                         </div>
@@ -283,7 +283,7 @@
                                     </div>
                                 </div>
                                 <div class="mask-icon">
-                                    <a class="cart" href="#">Add to Cart</a>
+                                    <a class="cart" href="#" @click = "box_option = 3">Add to Cart</a>
                                 </div>
                             </div>
                         </div>
@@ -389,12 +389,11 @@
     <!-- End copyright  -->
 
     <a href="#" id="back-to-top" title="Back to top" style="display: none;">&uarr;</a>
-</body>
-</html>
+
 
 <script>
     
-    
+    let box_option =0 ;
     // click color change
     // $(".panel").click(
     //     function(){
@@ -433,26 +432,26 @@
             sumbox1(){
                 rice =  this.box1[0].rice[1]*( 4*this.box1[0].rice[2] + 4*this.box1[0].rice[3]+ 9*this.box1[0].rice[4]);
                 main_meal = this.box1[0].main_meal[1]*( 4*this.box1[0].main_meal[2] + 4*this.box1[0].main_meal[3] + 9*this.box1[0].main_meal[4]);
-                veg1 = this.box1[0].veg1[1]* (4* this.box1[0].veg1[2] + 4*this.box1[0].veg1[3] + 9*this.box1[0].veg1[4]);
+                veg1 = this.box1[0].veg1[1]* ( 4* this.box1[0].veg1[2] + 4*this.box1[0].veg1[3] + 9*this.box1[0].veg1[4]);
                 veg2 = this.box1[0].veg2[1]*( 4*this.box1[0].veg2[2] + 4*this.box1[0].veg2[3] + 9*this.box1[0].veg2[4]);
                 veg3 = this.box1[0].veg3[1]*( 4*this.box1[0].veg3[2] + 4*this.box1[0].veg3[3] + 9*this.box1[0].veg3[4]);
-                return rice+main_meal+veg1+veg2+veg3;
+                return (rice+main_meal+veg1+veg2+veg3).toFixed(2);
             },
             sumbox2(){
                 rice =  this.box2[0].rice[1]*( 4*this.box2[0].rice[2] + 4*this.box2[0].rice[3]+ 9*this.box2[0].rice[4]);
                 main_meal = this.box2[0].main_meal[1] *( 4*this.box2[0].main_meal[2] + 4*this.box2[0].main_meal[3] + 9*this.box2[0].main_meal[4]);
-                veg1 = this.box2[0].veg1[1] *(4*this.box2[0].veg1[2] + 4*this.box2[0].veg1[3] + 9*this.box2[0].veg1[4]);
-                veg2 = this.box2[0].veg2[1] *(4*this.box2[0].veg2[2] + 4*this.box2[0].veg2[3] + 9*this.box2[0].veg2[4]);
-                veg3 = this.box2[0].veg3[1] *(4*this.box2[0].veg3[2] + 4*this.box2[0].veg3[3] +9*this.box2[0].veg3[4]);
-                return rice+main_meal+veg1+veg2+veg3;
+                veg1 = this.box2[0].veg1[1] * ( 4*this.box2[0].veg1[2] + 4*this.box2[0].veg1[3] + 9*this.box2[0].veg1[4]);
+                veg2 = this.box2[0].veg2[1] *( 4*this.box2[0].veg2[2] + 4*this.box2[0].veg2[3] + 9*this.box2[0].veg2[4]);
+                veg3 = this.box2[0].veg3[1] *( 4*this.box2[0].veg3[2] + 4*this.box2[0].veg3[3] + 9*this.box2[0].veg3[4]);
+                return (rice+main_meal+veg1+veg2+veg3).toFixed(2);
             },
             sumbox3(){
-                rice =  this.box3[0].rice[1] *(4*this.box3[0].rice[2] + 4*this.box3[0].rice[3]+ 9*this.box3[0].rice[4]);
+                rice =  this.box3[0].rice[1] *( 4*this.box3[0].rice[2] + 4*this.box3[0].rice[3]+ 9*this.box3[0].rice[4]);
                 main_meal = this.box3[0].main_meal[1] *( 4*this.box3[0].main_meal[2] + 4*this.box3[0].main_meal[3] + 9*this.box3[0].main_meal[4]);
-                veg1 = this.box3[0].veg1[1] * (4*this.box3[0].veg1[2] + 4*this.box3[0].veg1[3] + 9*this.box3[0].veg1[4]);
-                veg2 = this.box3[0].veg2[1] * (4*this.box3[0].veg2[2] + 4*this.box3[0].veg2[3] + 9*this.box3[0].veg2[4]);
-                veg3 = this.box3[0].veg3[1] * (4*this.box3[0].veg3[2] + 4*this.box3[0].veg3[3] + 9*this.box3[0].veg3[4]);
-                return rice+main_meal+veg1+veg2+veg3;
+                veg1 = this.box3[0].veg1[1] * ( 4*this.box3[0].veg1[2] + 4*this.box3[0].veg1[3] + 9*this.box3[0].veg1[4]);
+                veg2 = this.box3[0].veg2[1] * ( 4*this.box3[0].veg2[2] + 4*this.box3[0].veg2[3] + 9*this.box3[0].veg2[4]);
+                veg3 = this.box3[0].veg3[1] * ( 4*this.box3[0].veg3[2] + 4*this.box3[0].veg3[3] + 9*this.box3[0].veg3[4]);
+                return (rice+main_meal+veg1+veg2+veg3).toFixed(2);
             }
         }
     });
@@ -468,7 +467,51 @@
         }
     });
    console.log('result =',result);
+
+
+    const submit = () => {
+        window.alert(box_option);
+        if(box_option == 1){
+            console.log(JSON.parse(lunchboxData).box1)
+            localStorage.removeItem('cart');
+            localStorage.setItem('cart', JSON.stringify(JSON.parse(lunchboxData).box1));
+        }
+        else if(box_option == 2){
+            console.log(JSON.parse(lunchboxData).box2)
+            localStorage.removeItem('cart');
+            localStorage.setItem('cart', JSON.stringify(JSON.parse(lunchboxData).box2));
+        }
+        else if(box_option == 3){
+            console.log(JSON.parse(lunchboxData).box3)
+            localStorage.removeItem('cart');
+            localStorage.setItem('cart', JSON.stringify(JSON.parse(lunchboxData).box3));
+        }
+        
+        
+    };
+
 </script>
+<!-- ALL JS FILES -->
+<script src="js/tamplate/jquery-3.2.1.min.js"></script>
+<script src="js/tamplate/popper.min.js"></script>
+<script src="js/tamplate/bootstrap.min.js"></script>
+<!-- ALL PLUGINS -->
+<script src="js/tamplate/jquery.superslides.min.js"></script>
+<script src="js/tamplate/bootstrap-select.js"></script>
+<script src="js/tamplate/inewsticker.js"></script>
+<script src="js/tamplate/bootsnav.js"></script>
+<script src="js/tamplate/images-loded.min.js"></script>
+<script src="js/tamplate/isotope.min.js"></script>
+<script src="js/tamplate/owl.carousel.min.js"></script>
+<script src="js/tamplate/baguetteBox.min.js"></script>
+<script src="js/tamplate/jquery-ui.js"></script>
+<script src="js/tamplate/jquery.nicescroll.min.js"></script>
+<script src="js/tamplate/form-validator.min.js"></script>
+<script src="js/tamplate/contact-form-script.js"></script>
+<script src="js/tamplate/custom.js"></script>
+
+</body>
+</html>
 
 <style>
     .title-box {

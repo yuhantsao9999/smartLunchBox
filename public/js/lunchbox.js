@@ -45,9 +45,9 @@ const fetchLunchbox = async (userdata) => {
     };
     try {
         console.log('fetch =', data);
-        return fetch('http://172.20.0.102:1234/yummy', {
+        return fetch('http://192.168.8.118:1234/yummy', {
             method: 'POST',
-            // body: JSON.stringify(data),
+            body: JSON.stringify(data),
             headers: {
                 'content-type': 'application/json',
             },
@@ -69,7 +69,3 @@ const fetchLunchbox = async (userdata) => {
     }
 };
 
-const submit = () => {
-    window.alert('訂購完成！');
-    window.location = 'profile.html';
-};
