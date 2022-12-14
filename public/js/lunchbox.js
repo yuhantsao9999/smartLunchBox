@@ -5,7 +5,7 @@
 //         $(".xs2").toggle();
 //       });});
 
-const getHealth = () => {
+const getHealth = (boxs) => {
     const email = localStorage.getItem('email');
     console.log(email);
     fetch(`/health?email=${email}`, {
@@ -45,7 +45,7 @@ const fetchLunchbox = async (userdata) => {
     };
     try {
         console.log('fetch =', data);
-        return fetch('http://123.193.50.31:1234/yummy', {
+        return fetch('http://172.20.0.102:1234/yummy', {
             method: 'POST',
             // body: JSON.stringify(data),
             headers: {
@@ -57,6 +57,8 @@ const fetchLunchbox = async (userdata) => {
             })
             .then((response) => {
                 console.log('response', response);
+                localStorage.removeItem('lunchbox');
+                localStorage.setItem('lunchbox', JSON.stringify(response));
                 return response;
             })
             .catch((error) => {
