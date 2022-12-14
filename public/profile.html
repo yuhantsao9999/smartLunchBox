@@ -142,9 +142,11 @@
                                     <th>飲水</th>
                                 </tr>
                             </thead>
-                            <tbody id="eatData">
-                                    <th>12/15</th>
-                            </tbody>
+                                <tbody>
+                                    <tr id="eatData">
+                                    <td>12/15</td>
+                                    </tr>
+                                </tbody>
                         </table>
                     </div>
                 </div>
@@ -238,6 +240,7 @@
     <script src="js/tamplate/popper.min.js"></script>
     <script src="js/tamplate/bootstrap.min.js"></script>
     <!-- ALL PLUGINS -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
     <script src="js/tamplate/jquery.superslides.min.js"></script>
     <script src="js/tamplate/bootstrap-select.js"></script>
     <script src="js/tamplate/inewsticker.js"></script>
@@ -259,35 +262,7 @@
 
 </html>
 
-<script>
+<script type="text/javascript">
     const result = showhealth();
 
-    const lunchboxData = localStorage.getItem('cart');
-    let nutrition = new Vue({
-        el: "#app01",
-        data: JSON.parse(lunchboxData),
-        computed:{
-            sumbox(){
-                rice =  this.rice[1]*( 4*this.rice[2] + 4*this.rice[3]+ 9*this.rice[4]);
-                main_meal = this.main_meal[1]*( 4*this.main_meal[2] + 4*this.main_meal[3] + 9*this.main_meal[4]);
-                veg1 = this.veg1[1]* ( 4*this.veg1[2] + 4*this.veg1[3] + 9*this.veg1[4]);
-                veg2 = this.veg2[1]*( 4*this.veg2[2] + 4*this.veg2[3] + 9*this.veg2[4]);
-                veg3 = this.veg3[1]*( 4*this.veg3[2] + 4*this.veg3[3] + 9*this.veg3[4]);
-                return 20;
-            }
-        }
-    })
-
-
-    const add_data = () =>{
-        const tr = document.createElement('tr');
-
-        const tbody = document.getElementById('eatData');
-        td = document.createElement('td');
-        //td.appendChild(document.createTextNode("300"));
-        tr.appendChild(document.createTextNode("300"));
-        
-        tbody.appendChild(tr);
-    }
-    add_data();
 </script>
