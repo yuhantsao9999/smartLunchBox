@@ -155,34 +155,37 @@ function star_num(e) {
 }
 
 const comment = (contract_id) => {
-    const data = {
-        contract_id: contract_id,
-        email: localStorage.getItem('email'),
-        product_name: document.getElementById('product_name').value,
-        star_number: document.getElementById('star_number').value,
-        comment_textarea: document.getElementById('comment_textarea').value,
-    };
-    console.log('data', data);
-    const fetchPath = urlParams.get('title') === 'user' ? '/comment_publish' : `/comment_rent`;
+    // const data = {
+    //     contract_id: contract_id,
+    //     email: localStorage.getItem('email'),
+    //     product_name: document.getElementById('product_name').value,
+    //     star_number: document.getElementById('star_number').value,
+    //     comment_textarea: document.getElementById('comment_textarea').value,
+    // };
+    let comment = true;
+    window.alert('評論成功！');
+    window.location = '/comment.html';
+    // console.log('data', data);
+    // const fetchPath = urlParams.get('title') === 'user' ? '/comment_publish' : `/comment_rent`;
 
-    fetch(fetchPath, {
-        method: 'post',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
-    })
-        .then(async (response) => {
-            if (!response.ok) {
-                const error = await response.text();
-            }
-            return response;
-        })
-        .then((data) => {
-            window.alert('評論成功！');
-            window.location = '/comment.html';
-        })
-        .catch((err) => {
-            console.log('err', err);
-        });
+    // fetch(fetchPath, {
+    //     method: 'post',
+    //     headers: {
+    //         'Content-Type': 'application/json',
+    //     },
+    //     body: JSON.stringify(data),
+    // })
+    //     .then(async (response) => {
+    //         if (!response.ok) {
+    //             const error = await response.text();
+    //         }
+    //         return response;
+    //     })
+    //     .then((data) => {
+    //         window.alert('評論成功！');
+    //         window.location = '/comment.html';
+    //     })
+    //     .catch((err) => {
+    //         console.log('err', err);
+    //     });
 };
