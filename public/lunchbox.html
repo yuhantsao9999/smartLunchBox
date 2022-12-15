@@ -410,7 +410,7 @@
 
 <script>
     
-    let box_option =0 ;
+    let box_option =0;
     // click color change
     // $(".panel").click(
     //     function(){
@@ -486,26 +486,33 @@
    console.log('result =',result);
 
 
-    const submit = () => {
-        window.alert(box_option);
-        if(box_option == 1){
-            console.log(JSON.parse(lunchboxData).box1)
-            localStorage.removeItem('cart');
-            localStorage.setItem('cart', JSON.stringify(JSON.parse(lunchboxData).box1));
-        }
-        else if(box_option == 2){
-            console.log(JSON.parse(lunchboxData).box2)
-            localStorage.removeItem('cart');
-            localStorage.setItem('cart', JSON.stringify(JSON.parse(lunchboxData).box2));
-        }
-        else if(box_option == 3){
-            console.log(JSON.parse(lunchboxData).box3)
-            localStorage.removeItem('cart');
-            localStorage.setItem('cart', JSON.stringify(JSON.parse(lunchboxData).box3));
-        }
-        
-        
-    };
+const submit = () => {
+    if(box_option == 0){
+          alert("請填寫資料並確實點餐～")
+    }else{
+        alert("您的餐點外送中")
+            if(box_option == 1){
+                console.log(JSON.parse(lunchboxData).box1)
+                localStorage.removeItem('cart');
+                localStorage.setItem('cart', JSON.stringify(JSON.parse(lunchboxData).box1));
+                window.location = 'profile.html';
+            }
+            else if(box_option == 2){
+                //alert("您的餐點外送中")
+                console.log(JSON.parse(lunchboxData).box2)
+                localStorage.removeItem('cart');
+                localStorage.setItem('cart', JSON.stringify(JSON.parse(lunchboxData).box2));
+                window.location = 'profile.html';
+            }
+            else if(box_option == 3){
+                //alert("您的餐點外送中")
+                console.log(JSON.parse(lunchboxData).box3)
+                localStorage.removeItem('cart');
+                localStorage.setItem('cart', JSON.stringify(JSON.parse(lunchboxData).box3));
+                window.location = 'profile.html';
+            }
+    }  
+};
 
 </script>
 <!-- ALL JS FILES -->
