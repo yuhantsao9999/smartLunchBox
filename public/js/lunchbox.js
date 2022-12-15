@@ -45,7 +45,7 @@ const fetchLunchbox = async (userdata) => {
     };
     try {
         console.log('fetch =', data);
-        return fetch('http://192.168.8.118:1234/yummy', {
+        return fetch('http://123.193.50.31:1234/yummy', {
             method: 'POST',
             body: JSON.stringify(data),
             headers: {
@@ -68,4 +68,3 @@ const fetchLunchbox = async (userdata) => {
         return;
     }
 };
-

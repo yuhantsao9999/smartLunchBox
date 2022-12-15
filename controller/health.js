@@ -5,7 +5,7 @@ const Health = async (email) => {
     const results = await mysql.query(sql, [email]).catch((err) => {
         console.log(err);
     });
-    let data = {};
+    let data = [];
     if (results.length > 0) {
         for (let result of results) {
             // data.date = result.date;
@@ -15,7 +15,7 @@ const Health = async (email) => {
             // data.weight = result.weight;
             // data.step = result.step;
             // data.sportcal = result.sportcal;
-            data = result;
+            data.push(result);
         }
         return { error: false, data };
     }
