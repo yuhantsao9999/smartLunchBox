@@ -90,18 +90,18 @@ var nutrition = new Vue({
             // td.appendChild(document.createTextNode(rice+main_meal+veg1+veg2+veg3));
             // tr.appendChild(td);
 
-            return rice + main_meal + veg1 + veg2 + veg3;
+            return (rice + main_meal + veg1 + veg2 + veg3).toFixed(2);
         },
         sumveg: function () {
-            return this.veg1[1] + this.veg2[1] + this.veg3[1];
+            return (this.veg1[1] + this.veg2[1] + this.veg3[1]).toFixed(2);
         },
 
         sumrice: function () {
-            return this.rice[1];
+            return this.rice[1].toFixed(2);
         },
 
         sumprotien: function () {
-            return this.main_meal[1];
+            return this.main_meal[1].toFixed(2);
         },
 
         sumoil: function () {
