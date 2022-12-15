@@ -28,7 +28,7 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="./css/custom.css">
 
-    <!-- <script type="text/javascript" src="js/index.js"></script> -->
+    <script type="text/javascript" src="js/index.js"></script>
 </head>
 
 <body>
@@ -59,8 +59,8 @@
                         <li class="dropdown">
                             <a href="" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">SHOP</a>
                             <ul class="dropdown-menu">
-                                <li><a href="/shop">訂購餐盒</a></li>
-                                <li><a href="/shop">外送餐盒</a></li>
+                                <li><a href="/smartLunchBox/public/lunchbox.html">訂購餐盒</a></li>
+                                <li><a href="/smartLunchBox/public/lunchbox.html">外送餐盒</a></li>
                             </ul>
                         </li>
                         <li class="nav-item"><a class="nav-link" href="profile.html">Profile</a></li>
@@ -201,7 +201,7 @@
                                     </div>
                                 </div>
                                 <div class="mask-icon">
-                                    <a class="cart" href="#" @click = "box_option =1">Add to Cart</a>
+                                    <a class="cart" href="#" @click = "box_option = 1">Add to Cart</a>
                                 </div>
                             </div>
                         </div>
@@ -242,7 +242,7 @@
                                     </div>
                                 </div>
                                 <div class="mask-icon">
-                                    <a class="cart" href="#" @click = "box_option =2">Add to Cart</a>
+                                    <a class="cart" href="#" @click = "box_option = 2">Add to Cart</a>
                                 </div>
                             </div>
                         </div>
@@ -283,7 +283,7 @@
                                     </div>
                                 </div>
                                 <div class="mask-icon">
-                                    <a class="cart" href="#" @click = "box_option =3">Add to Cart</a>
+                                    <a class="cart" href="#" @click = "box_option = 3">Add to Cart</a>
                                 </div>
                             </div>
                         </div>
@@ -389,8 +389,7 @@
     <!-- End copyright  -->
 
     <a href="#" id="back-to-top" title="Back to top" style="display: none;">&uarr;</a>
-</body>
-</html>
+
 
 <script>
     
@@ -415,13 +414,20 @@
         }
     });
     
-   const result = getHealth();
-   const lunchboxData = localStorage.getItem('lunchbox');
+    const result = getHealth();
+    const lunchboxData = localStorage.getItem('lunchbox');
     console.log("lunchboxData in localstorage",typeof(lunchboxData));
 
     new Vue({
         el: "#app02",
         data: JSON.parse(lunchboxData),
+        // data: {"suggest_weight": [448.5, 179.4, 269.09999999999997], "box1": [{"name": ["減肥餐盒"], "rice": ["糙米飯", 200, 0.718, 0.074,
+        //         0.003], "main_meal": ["清蒸鮭魚", 150, 0, 0.207, 0.095], "veg1": ["白花菜", 80, 0.045, 0.018, 0.003], "veg2": ["莧菜", 80, 0.026,
+        //         0.019, 0.003], "veg3": ["滷豬血", 80, 0.009, 0.091, 0.009]}], "box2": [{"name": ["一般餐盒"], "rice": ["糙米飯", 200, 0.718,
+        //         0.074, 0.003], "main_meal": ["鮭魚排", 150, 0, 0.207, 0.095], "veg1": ["煮海帶", 80, 0.0444, 0.0084, 0.002], "veg2":
+        //         ["山藥炒黑木耳", 80, 0.459, 0.065, 0.007], "veg3": ["牡蠣", 80, 0.0391, 0.09, 0.13]}], "box3": [{"name": ["一般餐盒"], "rice":
+        //         ["糙米飯", 200, 0.718, 0.074, 0.003], "main_meal": ["鮭魚排", 150, 0, 0.207, 0.095], "veg1": ["甜椒", 80, 0.004, 0.01, 0.004],
+        //         "veg2": ["炒高麗菜", 80, 0.06, 0.013, 0.033], "veg3": ["香菇雞肉蒸蛋", 80, 0.02, 0.04, 0.02]}]},
         computed:{
             sumbox1(){
                 rice =  this.box1[0].rice[1]*( 4*this.box1[0].rice[2] + 4*this.box1[0].rice[3]+ 9*this.box1[0].rice[4]);
@@ -429,7 +435,7 @@
                 veg1 = this.box1[0].veg1[1]* ( 4* this.box1[0].veg1[2] + 4*this.box1[0].veg1[3] + 9*this.box1[0].veg1[4]);
                 veg2 = this.box1[0].veg2[1]*( 4*this.box1[0].veg2[2] + 4*this.box1[0].veg2[3] + 9*this.box1[0].veg2[4]);
                 veg3 = this.box1[0].veg3[1]*( 4*this.box1[0].veg3[2] + 4*this.box1[0].veg3[3] + 9*this.box1[0].veg3[4]);
-                return rice+main_meal+veg1+veg2+veg3;
+                return (rice+main_meal+veg1+veg2+veg3).toFixed(2);
             },
             sumbox2(){
                 rice =  this.box2[0].rice[1]*( 4*this.box2[0].rice[2] + 4*this.box2[0].rice[3]+ 9*this.box2[0].rice[4]);
@@ -437,7 +443,7 @@
                 veg1 = this.box2[0].veg1[1] * ( 4*this.box2[0].veg1[2] + 4*this.box2[0].veg1[3] + 9*this.box2[0].veg1[4]);
                 veg2 = this.box2[0].veg2[1] *( 4*this.box2[0].veg2[2] + 4*this.box2[0].veg2[3] + 9*this.box2[0].veg2[4]);
                 veg3 = this.box2[0].veg3[1] *( 4*this.box2[0].veg3[2] + 4*this.box2[0].veg3[3] + 9*this.box2[0].veg3[4]);
-                return rice+main_meal+veg1+veg2+veg3;
+                return (rice+main_meal+veg1+veg2+veg3).toFixed(2);
             },
             sumbox3(){
                 rice =  this.box3[0].rice[1] *( 4*this.box3[0].rice[2] + 4*this.box3[0].rice[3]+ 9*this.box3[0].rice[4]);
@@ -445,7 +451,7 @@
                 veg1 = this.box3[0].veg1[1] * ( 4*this.box3[0].veg1[2] + 4*this.box3[0].veg1[3] + 9*this.box3[0].veg1[4]);
                 veg2 = this.box3[0].veg2[1] * ( 4*this.box3[0].veg2[2] + 4*this.box3[0].veg2[3] + 9*this.box3[0].veg2[4]);
                 veg3 = this.box3[0].veg3[1] * ( 4*this.box3[0].veg3[2] + 4*this.box3[0].veg3[3] + 9*this.box3[0].veg3[4]);
-                return rice+main_meal+veg1+veg2+veg3;
+                return (rice+main_meal+veg1+veg2+veg3).toFixed(2);
             }
         }
     });
@@ -465,17 +471,17 @@
 
     const submit = () => {
         window.alert(box_option);
-        if(box_option ==1){
+        if(box_option == 1){
             console.log(JSON.parse(lunchboxData).box1)
             localStorage.removeItem('cart');
             localStorage.setItem('cart', JSON.stringify(JSON.parse(lunchboxData).box1));
         }
-        else if(box_option ==2){
+        else if(box_option == 2){
             console.log(JSON.parse(lunchboxData).box2)
             localStorage.removeItem('cart');
             localStorage.setItem('cart', JSON.stringify(JSON.parse(lunchboxData).box2));
         }
-        else if(box_option ==3){
+        else if(box_option == 3){
             console.log(JSON.parse(lunchboxData).box3)
             localStorage.removeItem('cart');
             localStorage.setItem('cart', JSON.stringify(JSON.parse(lunchboxData).box3));
@@ -485,6 +491,27 @@
     };
 
 </script>
+<!-- ALL JS FILES -->
+<script src="js/tamplate/jquery-3.2.1.min.js"></script>
+<script src="js/tamplate/popper.min.js"></script>
+<script src="js/tamplate/bootstrap.min.js"></script>
+<!-- ALL PLUGINS -->
+<script src="js/tamplate/jquery.superslides.min.js"></script>
+<script src="js/tamplate/bootstrap-select.js"></script>
+<script src="js/tamplate/inewsticker.js"></script>
+<script src="js/tamplate/bootsnav.js"></script>
+<script src="js/tamplate/images-loded.min.js"></script>
+<script src="js/tamplate/isotope.min.js"></script>
+<script src="js/tamplate/owl.carousel.min.js"></script>
+<script src="js/tamplate/baguetteBox.min.js"></script>
+<script src="js/tamplate/jquery-ui.js"></script>
+<script src="js/tamplate/jquery.nicescroll.min.js"></script>
+<script src="js/tamplate/form-validator.min.js"></script>
+<script src="js/tamplate/contact-form-script.js"></script>
+<script src="js/tamplate/custom.js"></script>
+
+</body>
+</html>
 
 <style>
     .title-box {
